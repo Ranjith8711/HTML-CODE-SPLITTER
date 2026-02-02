@@ -15,6 +15,13 @@ export function ExtractorTool() {
     js: ""
   })
 
+  const formatOutput = (content: string) => {
+    // Basic formatting to ensure tags are on new lines if they were squashed
+    return content
+      .replace(/></g, '>\n<')
+      .trim()
+  }
+
   const handleExtract = () => {
     if (!inputCode.trim()) return
 
@@ -25,7 +32,10 @@ export function ExtractorTool() {
     const styles: string[] = []
     const styleTags = doc.querySelectorAll("style")
     styleTags.forEach((tag) => {
-      if (tag.textContent) styles.push(tag.textContent)
+      // Using innerHTML to preserve line breaks better than textContent
+      if (tag.innerHTML) {
+        styles.push(tag.innerHTML.trim())
+      }
       tag.remove()
     })
 
@@ -34,31 +44,40 @@ export function ExtractorTool() {
     const scriptTags = doc.querySelectorAll("script")
     scriptTags.forEach((tag) => {
       // Only extract internal scripts
-      if (!tag.src && tag.textContent) {
-        scripts.push(tag.textContent)
+      if (!tag.src && tag.innerHTML) {
+        scripts.push(tag.innerHTML.trim())
         tag.remove()
       }
     })
 
     // Prepare modified HTML
-    // We add a link to the new external files if they exist
+    // We add references to external files
     if (styles.length > 0) {
       const link = doc.createElement("link")
       link.rel = "stylesheet"
       link.href = "style.css"
+      // Insert with a newline for readability
+      doc.head.appendChild(doc.createTextNode("\n  "))
       doc.head.appendChild(link)
+      doc.head.appendChild(doc.createTextNode("\n"))
     }
 
     if (scripts.length > 0) {
       const script = doc.createElement("script")
       script.src = "script.js"
+      // Insert with a newline for readability
+      doc.body.appendChild(doc.createTextNode("\n  "))
       doc.body.appendChild(script)
+      doc.body.appendChild(doc.createTextNode("\n"))
     }
 
+    // Serialize and format
+    let finalHtml = doc.documentElement.outerHTML
+    
     setExtracted({
-      html: doc.documentElement.outerHTML,
-      css: styles.join("\n\n"),
-      js: scripts.join("\n\n")
+      html: formatOutput(finalHtml),
+      css: styles.join("\n\n/* --- New Block --- */\n\n"),
+      js: scripts.join("\n\n// --- New Block ---\n\n")
     })
   }
 
