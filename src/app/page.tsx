@@ -52,9 +52,7 @@ export default function Home() {
               <span className="font-headline font-bold text-lg uppercase">CodeSplitter</span>
             </div>
             <p className="text-sm text-muted-foreground text-center">
-              A minimalist utility for quick code organization.
-              <br className="sm:hidden" />
-              Processing happens locally in your browser.
+              @2026 BEST TEAM BUILDING THIS PROJECT
             </p>
             <div className="flex gap-4">
               <a href="https://github.com" className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
