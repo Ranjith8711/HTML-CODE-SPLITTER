@@ -1,9 +1,8 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Code Extractor - Split your HTML easily',
+  title: 'CodeSplitter - Split your HTML easily',
   description: 'Automatically extract CSS and JavaScript from your HTML files into separate files.',
 };
 

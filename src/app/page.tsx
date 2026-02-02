@@ -1,4 +1,3 @@
-
 import { ExtractorTool } from "@/components/extractor-tool"
 import { Layers, Github } from "lucide-react"
 
@@ -12,7 +11,7 @@ export default function Home() {
             <div className="bg-primary p-1.5 rounded-lg shadow-sm group-hover:rotate-12 transition-transform">
               <Layers className="w-6 h-6 text-primary-foreground" />
             </div>
-            <span className="font-headline font-bold text-xl tracking-tight">CodeExtractor</span>
+            <span className="font-headline font-bold text-xl tracking-tight">CodeSplitter</span>
           </div>
           <div className="hidden sm:flex items-center gap-6">
             <a 
@@ -59,7 +58,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
               <Layers className="w-5 h-5 text-primary" />
-              <span className="font-headline font-bold text-lg">CodeExtractor</span>
+              <span className="font-headline font-bold text-lg">CodeSplitter</span>
             </div>
             <p className="text-sm text-muted-foreground text-center">
               Built for developers who want to clean up quick prototypes.
@@ -67,9 +66,9 @@ export default function Home() {
               No data leaves your browser.
             </p>
             <div className="flex gap-4">
-              <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+              <a href="https://github.com" className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
                 <Github className="w-4 h-4" />
-              </div>
+              </a>
             </div>
           </div>
         </div>
