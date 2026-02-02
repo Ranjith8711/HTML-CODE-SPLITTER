@@ -1,5 +1,7 @@
+
 import { ExtractorTool } from "@/components/extractor-tool"
 import { Layers, Github } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
   return (
@@ -13,16 +15,19 @@ export default function Home() {
             </div>
             <span className="font-headline font-bold text-xl tracking-tight uppercase">CodeSplitter</span>
           </div>
-          <div className="hidden sm:flex items-center gap-6">
-            <a 
-              href="https://github.com" 
-              className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="w-4 h-4" />
-              GitHub
-            </a>
+          <div className="flex items-center gap-4">
+            <div className="hidden sm:flex items-center gap-6">
+              <a 
+                href="https://github.com" 
+                className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
+            </div>
+            <ThemeToggle />
           </div>
         </div>
       </nav>
@@ -30,7 +35,7 @@ export default function Home() {
       {/* Simplified Hero Section */}
       <section className="container mx-auto px-4 pt-12 pb-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-5xl font-headline font-extrabold tracking-tighter text-slate-900 uppercase">
+          <h1 className="text-5xl font-headline font-extrabold tracking-tighter text-slate-900 dark:text-slate-50 uppercase">
             CodeSplitter
           </h1>
         </div>
@@ -44,7 +49,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="mt-24 border-t py-12 bg-white">
+      <footer className="mt-24 border-t py-12 bg-card">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
@@ -55,7 +60,7 @@ export default function Home() {
               @2026 BEST TEAM BUILDING THIS PROJECT
             </p>
             <div className="flex gap-4">
-              <a href="https://github.com" className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+              <a href="https://github.com" className="w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
                 <Github className="w-4 h-4" />
               </a>
             </div>
