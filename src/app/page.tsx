@@ -1,5 +1,5 @@
 import { ExtractorTool } from "@/components/extractor-tool"
-import { Layers, Github } from "lucide-react"
+import { Layers } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
@@ -19,17 +19,6 @@ export default function Home() {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <div className="hidden sm:flex items-center gap-6">
-              <a 
-                href="https://github.com" 
-                className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="w-4 h-4" />
-                GitHub
-              </a>
-            </div>
             <ThemeToggle />
           </div>
         </div>
