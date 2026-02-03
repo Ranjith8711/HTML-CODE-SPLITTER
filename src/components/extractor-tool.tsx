@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -16,7 +15,6 @@ export function ExtractorTool() {
   })
 
   const formatOutput = (content: string) => {
-    // Basic formatting to ensure tags are on new lines if they were squashed
     return content
       .replace(/></g, '>\n<')
       .trim()
@@ -32,7 +30,6 @@ export function ExtractorTool() {
     const styles: string[] = []
     const styleTags = doc.querySelectorAll("style")
     styleTags.forEach((tag) => {
-      // Using innerHTML to preserve line breaks better than textContent
       if (tag.innerHTML) {
         styles.push(tag.innerHTML.trim())
       }
@@ -43,7 +40,6 @@ export function ExtractorTool() {
     const scripts: string[] = []
     const scriptTags = doc.querySelectorAll("script")
     scriptTags.forEach((tag) => {
-      // Only extract internal scripts
       if (!tag.src && tag.innerHTML) {
         scripts.push(tag.innerHTML.trim())
         tag.remove()
@@ -51,12 +47,10 @@ export function ExtractorTool() {
     })
 
     // Prepare modified HTML
-    // We add references to external files
     if (styles.length > 0) {
       const link = doc.createElement("link")
       link.rel = "stylesheet"
       link.href = "style.css"
-      // Insert with a newline for readability
       doc.head.appendChild(doc.createTextNode("\n  "))
       doc.head.appendChild(link)
       doc.head.appendChild(doc.createTextNode("\n"))
@@ -65,19 +59,17 @@ export function ExtractorTool() {
     if (scripts.length > 0) {
       const script = doc.createElement("script")
       script.src = "script.js"
-      // Insert with a newline for readability
       doc.body.appendChild(doc.createTextNode("\n  "))
       doc.body.appendChild(script)
       doc.body.appendChild(doc.createTextNode("\n"))
     }
 
-    // Serialize and format
     let finalHtml = doc.documentElement.outerHTML
     
     setExtracted({
       html: formatOutput(finalHtml),
-      css: styles.join("\n\n/* --- New Block --- */\n\n"),
-      js: scripts.join("\n\n// --- New Block ---\n\n")
+      css: styles.join("\n\n/* --- CSS Module --- */\n\n"),
+      js: scripts.join("\n\n// --- JS Module ---\n\n")
     })
   }
 
@@ -93,7 +85,7 @@ export function ExtractorTool() {
         <div className="relative bg-card rounded-xl shadow-lg p-6">
           <label className="block text-sm font-medium mb-3 text-muted-foreground flex items-center gap-2">
             <Zap className="w-4 h-4 text-accent" />
-            Paste your HTML code here
+            Paste your HTML Code here
           </label>
           <Textarea
             value={inputCode}
@@ -126,21 +118,21 @@ export function ExtractorTool() {
       {extracted.html && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <FileCard
-            title="HTML"
+            title="HTML Code"
             fileName="index.html"
             content={extracted.html}
             language="html"
             icon={<FileCode className="w-5 h-5 text-blue-500" />}
           />
           <FileCard
-            title="CSS"
+            title="CSS Styles"
             fileName="style.css"
             content={extracted.css}
             language="css"
             icon={<Palette className="w-5 h-5 text-pink-500" />}
           />
           <FileCard
-            title="JavaScript"
+            title="JS Logic"
             fileName="script.js"
             content={extracted.js}
             language="javascript"

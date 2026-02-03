@@ -1,25 +1,21 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Background: Light gray #F0F0F0 */
     --background: 0 0% 94%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    /* Primary: Soft blue #A0C4FF (HSL: 218, 100%, 81%) */
     --primary: 218 100% 81%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    /* Accent: Orange #FFB347 (HSL: 35, 100%, 64%) */
     --accent: 35 100% 64%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
@@ -60,7 +56,20 @@
   body {
     @apply bg-background text-foreground transition-colors duration-300;
   }
-  code, pre {
-    @apply font-code;
+}
+
+@layer utilities {
+  .animate-reveal {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: reveal-up 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  @keyframes reveal-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

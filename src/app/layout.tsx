@@ -3,7 +3,7 @@ import './globals.css';
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: 'HTML_CODESPLITTER - Split your HTML easily',
+  title: 'HTML CODE SPLITTER - Organize your modules',
   description: 'Automatically extract CSS and JavaScript from your HTML files into separate files.',
 };
 
