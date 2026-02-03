@@ -74,11 +74,6 @@ export default function Home() {
             <p className="text-sm text-muted-foreground text-center">
               @2026 BEST TEAM BUILDING THIS PROJECT
             </p>
-            <div className="flex gap-4">
-              <a href="https://github.com" className="w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-                <Github className="w-4 h-4" />
-              </a>
-            </div>
           </div>
         </div>
       </footer>
