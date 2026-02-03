@@ -1,10 +1,9 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: 'CodeSplitter - Split your HTML easily',
+  title: 'HTML_CODESPLITTER - Split your HTML easily',
   description: 'Automatically extract CSS and JavaScript from your HTML files into separate files.',
 };
 

@@ -1,4 +1,3 @@
-
 import { ExtractorTool } from "@/components/extractor-tool"
 import { Layers, Github } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -13,7 +12,7 @@ export default function Home() {
             <div className="bg-primary p-1.5 rounded-lg shadow-sm group-hover:rotate-12 transition-transform">
               <Layers className="w-6 h-6 text-primary-foreground" />
             </div>
-            <span className="font-headline font-bold text-xl tracking-tight uppercase">CodeSplitter</span>
+            <span className="font-headline font-bold text-xl tracking-tight uppercase">HTML_CODESPLITTER</span>
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex items-center gap-6">
@@ -36,7 +35,7 @@ export default function Home() {
       <section className="container mx-auto px-4 pt-12 pb-8">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-5xl font-headline font-extrabold tracking-tighter text-slate-900 dark:text-slate-50 uppercase">
-            CodeSplitter
+            HTML_CODESPLITTER
           </h1>
         </div>
       </section>
@@ -54,7 +53,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
               <Layers className="w-5 h-5 text-primary" />
-              <span className="font-headline font-bold text-lg uppercase">CodeSplitter</span>
+              <span className="font-headline font-bold text-lg uppercase">HTML_CODESPLITTER</span>
             </div>
             <p className="text-sm text-muted-foreground text-center">
               @2026 BEST TEAM BUILDING THIS PROJECT
