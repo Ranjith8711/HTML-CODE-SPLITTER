@@ -36,7 +36,7 @@ export default function Home() {
       {/* Hero Section with Animation */}
       <section className="container mx-auto px-4 pt-16 pb-12">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-headline font-extrabold tracking-tighter text-slate-900 dark:text-slate-50 uppercase mb-4 overflow-hidden">
+          <h1 className="text-4xl md:text-5xl font-headline font-extrabold tracking-tighter text-slate-900 dark:text-slate-50 uppercase mb-4 overflow-hidden">
             {brandName.split("").map((char, i) => (
               <span 
                 key={i} 
