@@ -6,7 +6,7 @@ export default function Home() {
   const brandName = "HTML CODE SPLITTER";
 
   return (
-    <main className="min-h-screen pb-20 bg-background text-foreground font-body">
+    <main className="min-h-screen pb-10 bg-background text-foreground font-body">
       {/* Navigation / Header */}
       <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -35,10 +35,10 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with Animation */}
-      <section className="container mx-auto px-4 pt-16 pb-12">
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 pt-8 pb-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-headline font-extrabold tracking-tighter uppercase mb-4 overflow-hidden py-2">
+          <h1 className="text-3xl md:text-4xl font-headline font-extrabold tracking-tighter uppercase mb-2 overflow-hidden py-1">
             <span className="bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
               {brandName.split("").map((char, i) => (
                 <span 
@@ -51,9 +51,6 @@ export default function Home() {
               ))}
             </span>
           </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-2 duration-1000 delay-500 fill-mode-forwards opacity-0">
-            Split monolithic HTML into clean, modular files instantly.
-          </p>
         </div>
       </section>
 
@@ -65,12 +62,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="mt-24 border-t py-12 bg-card">
+      <footer className="mt-12 border-t py-8 bg-card">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
               <Layers className="w-5 h-5 text-primary" />
-              <span className="font-headline font-bold text-lg uppercase bg-gradient-to-r from-emerald-500 to-blue-600 bg-clip-text text-transparent">
+              <span className="font-headline font-bold text-lg uppercase bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
                 HTML CODE SPLITTER
               </span>
             </div>
