@@ -1,7 +1,7 @@
 # HTML-CODE-SPLITTER &&  Source Code Viewer
 HTML Code Splitter is a simple browser-based tool that separates a single HTML file into organized HTML, CSS, and JavaScript files by extracting code from <style> and <script> tags.    
 ## Code Runing Command :
-* npm install  
+*   npm install  
 * npm run dev
 
 # Demo Link : 
